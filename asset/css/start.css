@@ -1,0 +1,149 @@
+
+:root {
+  --color-white: rgb(255, 255, 255);
+  --color-bg: rgb(232, 246, 239);
+  --color-dark: rgb(34, 31, 30);
+  --color-dark-gray: rgb(255, 255, 255, 20%);
+  --color-orange: rgb(239, 137, 95);
+}
+
+
+
+.button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+  outline: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: opacity 250ms ease-in-out;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+/* End General Styles */
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #D9E4FF;
+  padding: 3.125rem 0;
+  text-align: center;
+  overflow: hidden;
+  animation: fadeInContent 1000ms ease-in-out;
+  transition: nonr 500ms ease-in-out;
+  transition-property: opacity, visibility;
+}
+
+.wrapper--has-fade {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.slides-area {
+  display: flex;
+  transition: margin 500ms ease-in-out;
+}
+
+.slides-area__slide {
+  width: 100%;
+}
+
+.slide__image {
+  width: 90%;
+}
+
+.slide__text {
+  padding: 0 2.1875rem;
+}
+
+.slide__title {
+  color: #003982;
+  font-size: min(10vw, 1.75rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.slide__paragraph {
+  color: #2F3E56;
+  font-size: 0.900rem;
+  font-weight: 100;
+  margin-top: 0.3125rem;
+}
+
+.button-next {
+  background-color: #003982;
+  color: #FFFFFF;
+  border-radius: 0.625rem;
+  padding: 0.8125rem 2.25rem;
+  font-size: 1.15rem;
+  margin: 1.25rem 0;
+}
+.button-next:hover{
+  background-color: #00296B;
+}
+.button-next--fade {
+  opacity: 0.3;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.paginations-area {
+  position: absolute; 
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none; 
+  margin-bottom: 75px;
+}
+
+
+.paginations-area__item {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.375rem;
+  border-radius: 1.5625rem;
+}
+.paginations-area__item {
+  background-color: #5A6D8C; 
+}
+
+.paginations-area__item--current {
+  background-color: #003982; 
+}
+
+
+.paginations-area__item:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.paginations-area__item--current {
+  width: 1.5625rem;
+  background-color: var(--color-white);
+  animation: activeItem 500ms ease-in-out;
+}
+
+@keyframes activeItem {
+  from {
+    width: 0.5rem;
+    background-color: var(--color-dark-gray);
+  }
+
+  to {
+    width: 1.5625rem;
+    background-color: var(--color-white);
+  }
+}
