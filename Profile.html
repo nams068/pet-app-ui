@@ -12,47 +12,40 @@
 <body>
 <div class="phone">
   <div class="status-bar">
-  <span class="time">12:22</span>
-  <div class="status-icons">
-    <i class="fa-solid fa-signal"></i>
-    <i class="fa-solid fa-wifi"></i>
-    <i class="fa-solid fa-battery-three-quarters"></i>
+    <span class="time">12:22</span>
+    <div class="status-icons">
+      <i class="fa-solid fa-signal"></i>
+      <i class="fa-solid fa-wifi"></i>
+      <i class="fa-solid fa-battery-three-quarters"></i>
+    </div>
   </div>
+
+  <header class="header-profil">
+    <i class="fa-solid fa-gear notification"></i>
+    <i class="fa-solid fa-bell notification"></i> 
+  </header>
+
+  <div class="profile-container">
+    <div class="profile-photo-wrapper">
+      <img src="https://t3.ftcdn.net/jpg/06/99/46/60/360_F_699466075_DaPTBNlNQTOwwjkOiFEoOvzDV0ByXR9E.jpg" alt="Profil Fotoğrafı" class="profile-photo">
+      <i class="fa-solid fa-paw pati-icon"></i>
+    </div>
+    <div class="profile-info">
+      <h2 data-key="profile_name">John Doe</h2>
+      <p data-key="profile_email">Petcare@gmail.com</p>
+    </div>
   </div>
 
+  <section class="profil-info">
+    <div class="info-header">
+      <h2 data-key="your_pets">Your Pets</h2>
+      <a href="learn.html" data-key="see_all">See All</a>
+    </div>
+  </section>
 
-    <header class="header-profil">
-      <i class="fa-solid fa-gear notification "></i>
-     <i class="fa-solid fa-bell notification">
-     </i> 
-    </header>
-
-<div class="profile-container">
-  <div class="profile-photo-wrapper">
-    <img src="https://t3.ftcdn.net/jpg/06/99/46/60/360_F_699466075_DaPTBNlNQTOwwjkOiFEoOvzDV0ByXR9E.jpg" alt="Profil Fotoğrafı" class="profile-photo">
-    <i class="fa-solid fa-paw pati-icon"></i>
-  </div>
-  <div class="profile-info">
-    <h2>John Doe</h2>
-    <p>Petcare@gmail.com</p>
-  </div>
-</div>
-
-   
-    <section class="profil-info">
-      <div class="info-header">
-        <h2>Your Pets</h2>
-        <a href="learn.html">See All </a>
-      </div>
-      
-    </section>
- 
-
-
-
-<div class="card" role="region" aria-label="Profil kartı">
-  <div class="animal-card1" >
-  <div class="card-row">
+  <div class="card" role="region" aria-label="Profil kartı">
+    <div class="animal-card1">
+      <div class="card-row">
         <div class="avatar" aria-hidden="true">
           <img src="https://thumbs.dreamstime.com/b/headshot-portrait-cute-funny-dog-headshot-portrait-cute-funny-dog-jack-russell-terrier-looking-camera-tongue-out-370122350.jpg" alt="Profil fotoğrafı">
         </div>
@@ -60,13 +53,13 @@
           <span class="more-dots" aria-hidden="true"></span>
         </button>
       </div>
-
-    <div class="content">
-  <h3 class="content-title">Bella</h3>
-  <p class="content-text">American  Pit Pull</p>
-    </div>
+      <div class="content">
+        <h3 class="content-title" data-key="pet1_name">Bella</h3>
+        <p class="content-text" data-key="pet1_breed">American Pit Pull</p>
+      </div>
     </div>   
-    <div class="animal-card2" >
+
+    <div class="animal-card2">
       <div class="card-row">
         <div class="avatar" aria-hidden="true">
           <img src="https://www.wahpr.com/files/lab.jpeg" alt="Profil fotoğrafı">
@@ -75,81 +68,99 @@
           <span class="more-dots" aria-hidden="true"></span>
         </button>
       </div>
-
       <div class="content">
-  <h3 class="content-title">Daisy</h3>
-  <p class="content-text">American  Pit Pull</p>
-    </div>
-    </div>
-</div>
-
-  
- 
-
-<section class="profil-info">
-      <div class="info-header">
-        <h2>Pet Care Nearby</h2>
-        <a href="learn.html">See All </a>
+        <h3 class="content-title" data-key="pet2_name">Daisy</h3>
+        <p class="content-text" data-key="pet2_breed">American Pit Pull</p>
       </div>
-      
+    </div>
+  </div>
+
+  <section class="profil-info">
+    <div class="info-header">
+      <h2 data-key="pet_care_nearby">Pet Care Nearby</h2>
+      <a href="learn.html" data-key="see_all">See All</a>
+    </div>
   </section>
-  
-<div class="pet-card">
-  <div class="pet-card-header">
-    <div class="pet-info-wrapper">
-      <img src="https://www.wahpr.com/files/lab.jpeg" alt="Animal">
-      <div class="pet-info">
-        <h4>Animal Pet Care</h4>
-      <span style="color: black; font-weight: bold;" >Daisy</span>
-        <span>50h</span>
+
+  <div class="pet-card">
+    <div class="pet-card-header">
+      <div class="pet-info-wrapper">
+        <img src="https://www.wahpr.com/files/lab.jpeg" alt="Animal">
+        <div class="pet-info">
+          <h4 data-key="pet_card_title">Animal Pet Care</h4>
+          <span style="color: black; font-weight: bold;" data-key="pet_card_name">Daisy</span>
+          <span data-key="pet_card_hours">50h</span>
+        </div>
       </div>
+      <div class="pet-options">⋮</div>
     </div>
-    <div class="pet-options">⋮</div>
+    <div class="pet-tags">
+      <div class="pet-tag" 
+      data-key="tag_bathing">Bathing</div>
+      <div class="pet-tag" data-key="tag_nail">Nail</div>
+      <div class="pet-tag" data-key="tag_teeth">Teeth</div>
+      <div class="pet-tag" data-key="tag_hotdog">Hot Dog</div>
+    </div>
   </div>
 
-  <div class="pet-tags">
-    <div class="pet-tag">Bathing</div>
-    <div class="pet-tag">Nail</div>
-    <div class="pet-tag">Teeth</div>
-    <div class="pet-tag">Hot Dog</div>
-  </div>
+  <!-- Bottom Navbar -->
+  <nav class="bottom-nav">
+    <a href="index.html">
+      <i class="fa-solid fa-house"></i>
+      <span data-key="nav_home">Home</span>
+    </a>
+    <a href="learn.html">
+      <i class="fa-solid fa-book-open"></i>
+      <span data-key="nav_learn">Learn</span>
+    </a>
+    <a href="petpost.html" class="center-btn">
+      <div class="circle" style="background-color: #9DA3B5;">
+        <i class="fa-solid fa-paw" style="color: white; font-size: 24px;"></i>
+      </div>
+      <span data-key="nav_pet_posts">Pet Posts</span>
+    </a>
+    <a href="Friends.html">
+      <i class="fa-solid fa-cat"></i>
+      <span data-key="nav_friends">Friends</span>
+    </a>
+    <a href="Profile.html" class="active">
+      <i class="fa-solid fa-user"></i>
+      <span data-key="nav_profile">Profil</span>
+    </a>
+  </nav>
+
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Kullanıcının seçtiği dil localStorage'dan
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "EN";
 
+  // Tüm data-key içeren elementleri seç
+  const elements = document.querySelectorAll("[data-key]");
+  const texts = Array.from(elements).map(el => el.textContent);
 
-<!-- Bottom Navbar -->
-<nav class="bottom-nav">
-  <a href="index.html" >
-    <i class="fa-solid fa-house"></i>
-    <span>Home</span>
-  </a>
-  <a href="learn.html">
-    <i class="fa-solid fa-book-open"></i>
-    <span>Learn</span>
-  </a>
-  <a href="petpost.html" class="center-btn">
-    <div class="circle" style="background-color: #9DA3B5; " >
-      <i class="fa-solid fa-paw" style="color: white; font-size: 24px;" ></i>
-    </div>
-    <span>Pet Posts</span>
-  </a>
-  <a href="Friends.html">
-    <i class="fa-solid fa-cat"></i>
-    <span>Friends</span>
-  </a>
-  <a href="Profile.html" class="active">
-    <i class="fa-solid fa-user"></i>
-    <span>Profil</span>
-  </a>
-</nav>
+  // DeepL Node.js server API isteği
+  fetch("http://localhost:3000/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: texts, target_lang: selectedLanguage.toUpperCase() })
+  })
+  .then(res => res.json())
+  .then(data => {
+    // Deepl response data'ya göre textleri güncelle
+    elements.forEach((el, i) => {
+      if (data.translations && data.translations[i] && data.translations[i].text) {
+        el.textContent = data.translations[i].text;
+      }
+    });
+  })
+  .catch(err => console.error("Çeviri yüklenirken hata oluştu:", err));
+});
+</script>
 
-  </div>
-
-   <!-- Font Awesome için -->
-  <script src="https://kit.fontawesome.com/4f35b45f5a.js" crossorigin="anonymous"></script>
-
-  <script src="asset/script/script.js"></script>
-    <!-- Framework7 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/framework7@7/framework7-bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/4f35b45f5a.js" crossorigin="anonymous"></script>
+<script src="asset/script/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/framework7@7/framework7-bundle.min.js"></script>
 </body>
 </html>

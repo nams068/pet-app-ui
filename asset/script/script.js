@@ -31,6 +31,3 @@ document.querySelector('.profile').addEventListener('click', function() {
   window.location.href = "Profile.html";
 });
 
-
-
-

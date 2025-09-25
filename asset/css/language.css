@@ -1,0 +1,123 @@
+.phone {
+  width: 375px;
+  min-height: 667px;
+  max-height: 667px;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+body  html {
+    user-select:auto !important;
+}
+.section {
+  padding: 15px;
+  flex: 1; 
+  overflow-y: auto; 
+}
+.sectionbaslik {
+  padding: 15px;
+  flex: 1; 
+}
+.footer {
+  padding: 15px;
+  border-top: 1px solid #eee;
+  background: #fff;
+  position: sticky;
+  bottom: 0;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.header .back {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: default;
+}
+
+.header h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.section {
+  padding: 15px;
+}
+
+.section .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section .title a {
+  float: right;
+  font-size: 12px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-radius: 12px;
+  background: #f9f9f9;
+}
+
+.lang-item.selected {
+  background: #008060;
+  color: white;
+}
+
+.lang-item .icon {
+  margin-right: 10px;
+}
+
+.lang-item .text {
+  flex: 1;
+}
+
+.radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #999;
+  border-radius: 50%;
+}
+
+.radio.checked {
+  border: 6px solid white;
+  background: #008060;
+}
+
+.footer {
+  padding: 15px;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  background: #008060;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
