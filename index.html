@@ -11,77 +11,75 @@
 <body>
 <div class="phone">
     <div class="status-bar">
-  <span class="time">12:22</span>
-  <div class="status-icons">
-    <i class="fa-solid fa-signal"></i>
-    <i class="fa-solid fa-wifi"></i>
-    <i class="fa-solid fa-battery-three-quarters"></i>
-  </div>
-  </div>
+      <span class="time" data-key="status_time">12:22</span>
+      <div class="status-icons">
+        <i class="fa-solid fa-signal"></i>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-solid fa-battery-three-quarters"></i>
+      </div>
+    </div>
 
     <!-- Header -->
     <header class="header">
-      <input type="text" class="search" placeholder="Search Articles...">
-     <i class="fa-solid fa-bell notification">
-     </i> 
+      <input type="text" class="search" placeholder="Search Articles..." data-key="search_placeholder">
+      <i class="fa-solid fa-bell notification"></i> 
       <img src="https://t3.ftcdn.net/jpg/06/99/46/60/360_F_699466075_DaPTBNlNQTOwwjkOiFEoOvzDV0ByXR9E.jpg" class="profile" alt="Profile">
     </header>
 
     <!-- Animals Section -->
     <section class="animals">
-      <h2>Animals</h2>
+      <h2 data-key="animals_title">Animals</h2>
       <div class="animal-list">
         <div class="animal-card">
           <img src="https://thumbs.dreamstime.com/b/headshot-portrait-cute-funny-dog-headshot-portrait-cute-funny-dog-jack-russell-terrier-looking-camera-tongue-out-370122350.jpg" alt="Dog">
-          <p>Bella</p>
+          <p data-key="animal_bella">Bella</p>
         </div>
         <div class="animal-card">
           <img src="https://www.wahpr.com/files/lab.jpeg" alt="Dog">
-          <p>Daisy</p>
+          <p data-key="animal_daisy">Daisy</p>
         </div>
         <div class="animal-cardadd">
           <i class="fa-solid fa-plus"></i>
-          <p>Add</p>
+          <p data-key="animal_add">Add</p>
         </div>
       </div>
     </section>
 
    <section class="appointments">
-  <div class="section-header">
-    <h2>Appointments</h2>
-    <a href="#">See all  ></a>
-  </div>
-  
-  <div class="appointment-cards-wrapper">
-    <div class="appointment-card">
-      <p><strong>Rabies Vaccination</strong></p>
-      <span class="date">Mon 24 Jan </span><br>
-  <div class="mini">
-    <img src="https://thumbs.dreamstime.com/b/headshot-portrait-cute-funny-dog-headshot-portrait-cute-funny-dog-jack-russell-terrier-looking-camera-tongue-out-370122350.jpg" alt="ornek">
-    <div class="mini-text">
-      <p>Bella - Dr. Smith</p>
-    </div>
-  </div>
-    </div>
-    <div class="appointment-card" style="background: #B88358 !important;" >
-      <p><strong>Vet Appointment</strong></p>
-      <span class="date">Tue 25 Jan </span>
-     <div class="mini">
-    <img src="https://www.wahpr.com/files/lab.jpeg" alt="ornek">
-    <div class="mini-text">
-      <p>Daisy</p>
-    </div>
-  </div>
-    </div>
-  </div>
-</section>
-
+      <div class="section-header">
+        <h2 data-key="appointments_title">Appointments</h2>
+        <a href="#" data-key="appointments_seeall">See all ></a>
+      </div>
+      
+      <div class="appointment-cards-wrapper">
+        <div class="appointment-card">
+          <p><strong data-key="appointment_rabies">Rabies Vaccination</strong></p>
+          <span class="date" data-key="appointment_date1">Mon 24 Jan</span><br>
+          <div class="mini">
+            <img src="https://thumbs.dreamstime.com/b/headshot-portrait-cute-funny-dog-headshot-portrait-cute-funny-dog-jack-russell-terrier-looking-camera-tongue-out-370122350.jpg" alt="ornek">
+            <div class="mini-text">
+              <p data-key="appointment_bella">Bella - Dr. Smith</p>
+            </div>
+          </div>
+        </div>
+        <div class="appointment-card" style="background: #B88358 !important;">
+          <p><strong data-key="appointment_vet">Vet Appointment</strong></p>
+          <span class="date" data-key="appointment_date2">Tue 25 Jan</span>
+          <div class="mini">
+            <img src="https://www.wahpr.com/files/lab.jpeg" alt="ornek">
+            <div class="mini-text">
+              <p data-key="appointment_daisy">Daisy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Learn -->
     <section class="learn">
       <div class="section-header">
-        <h2>Learn</h2>
-        <a href="learn.html">More  ></a>
+        <h2 data-key="learn_title">Learn</h2>
+        <a href="learn.html" data-key="learn_more">More ></a>
       </div>
       <div class="learn-card">
         <img src="https://www.safarivet.com/wp-content/uploads/2018/07/Pet-Health-Care-Tips-for-PetOwners.jpg" alt="Learn">
@@ -90,36 +88,54 @@
 
 <!-- Bottom Navbar -->
 <nav class="bottom-nav">
-  <a href="index.html" class="active">
+  <a href="index.html" class="active" data-key="nav_home">
     <i class="fa-solid fa-house"></i>
     <span>Home</span>
   </a>
-  <a href="learn.html">
+  <a href="learn.html" data-key="nav_learn">
     <i class="fa-solid fa-book-open"></i>
     <span>Learn</span>
   </a>
-  <a href="petpost.html" class="center-btn">
-    <div class="circle" style="background-color: #9DA3B5; " >
-      <i class="fa-solid fa-paw" style="color: white; font-size: 24px;" ></i>
+  <a href="petpost.html" class="center-btn" data-key="nav_petposts">
+    <div class="circle" style="background-color: #9DA3B5;">
+      <i class="fa-solid fa-paw" style="color: white; font-size: 24px;"></i>
     </div>
     <span>Pet Posts</span>
   </a>
-  <a href="Friends.html">
+  <a href="Friends.html" data-key="nav_friends">
     <i class="fa-solid fa-cat"></i>
     <span>Friends</span>
   </a>
-  <a href="Profile.html">
+  <a href="Profile.html" data-key="nav_profile">
     <i class="fa-solid fa-user"></i>
     <span>Profil</span>
   </a>
 </nav>
 
-  </div>
-   <!-- Font Awesome için -->
-  <script src="https://kit.fontawesome.com/4f35b45f5a.js" crossorigin="anonymous"></script>
+</div>
 
-  <script src="asset/script/script.js"></script>
-    <!-- Framework7 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/framework7@7/framework7-bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "EN";
+  const elements = document.querySelectorAll("[data-key]");
+  const texts = Array.from(elements).map(el => el.textContent);
+
+  fetch("http://localhost:3000/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: texts, target_lang: selectedLanguage.toUpperCase() })
+  })
+  .then(res => res.json())
+  .then(data => {
+    elements.forEach((el, i) => {
+      if (data.translations && data.translations[i] && data.translations[i].text) {
+        el.textContent = data.translations[i].text;
+      }
+    });
+  })
+  .catch(err => console.error("Çeviri yüklenirken hata oluştu:", err));
+});
+</script>
+<script src="asset/script/script.js"></script>
 </body>
 </html>

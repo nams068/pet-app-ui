@@ -12,14 +12,13 @@
 <body>
 <div class="phone">
     <div class="status-bar">
-  <span class="time">12:22</span>
-  <div class="status-icons">
-    <i class="fa-solid fa-signal"></i>
-    <i class="fa-solid fa-wifi"></i>
-    <i class="fa-solid fa-battery-three-quarters"></i>
-  </div>
-  </div>
-
+      <span class="time" data-key="status_time">12:22</span>
+      <div class="status-icons">
+        <i class="fa-solid fa-signal"></i>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-solid fa-battery-three-quarters"></i>
+      </div>
+    </div>
 
 <main class="wrapper">
   <!-- Slides Area -->
@@ -28,8 +27,8 @@
       <img src="https://www.11pets.com/storage/library/6468de09c7acf.png" alt="illustration" class="slide__image">
 
       <div class="slide__text">
-        <h2 class="slide__title">Stay Notified</h2>
-        <p class="slide__paragraph">
+        <h2 class="slide__title" data-key="slide1_title">Stay Notified</h2>
+        <p class="slide__paragraph" data-key="slide1_paragraph">
           Get instant notifications for vaccinations, vet visits, and reminders for your pets.
         </p>
       </div>
@@ -38,8 +37,8 @@
       <img src="https://gps-trace.com/assets/img/petovik/main.svg" alt="illustration" class="slide__image">
 
       <div class="slide__text">
-        <h2 class="slide__title">Track Their Location</h2>
-        <p class="slide__paragraph">
+        <h2 class="slide__title" data-key="slide2_title">Track Their Location</h2>
+        <p class="slide__paragraph" data-key="slide2_paragraph">
           Monitor your pet's real-time location to ensure their safety wherever they go.
         </p>
       </div>
@@ -48,8 +47,8 @@
       <img src="asset/images/sonslider.png" alt="illustration" class="slide__image">
 
       <div class="slide__text">
-        <h2 class="slide__title">Healthy & Happy Pets</h2>
-        <p class="slide__paragraph">
+        <h2 class="slide__title" data-key="slide3_title">Healthy & Happy Pets</h2>
+        <p class="slide__paragraph" data-key="slide3_paragraph">
           Keep your pets healthy with tips, reminders, and health tracking features.
         </p>
       </div>
@@ -57,20 +56,38 @@
   </section>
 
   <!-- Next Button -->
-  <button class="button button-next" aria-label="to get next slide">Next</button>
+  <button class="button button-next" aria-label="to get next slide" data-key="next_button">Next</button>
 
   <!-- Paginations Area -->
   <section class="paginations-area"></section>
 </main>
 
+</div>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "EN";
+  const elements = document.querySelectorAll("[data-key]");
+  const texts = Array.from(elements).map(el => el.textContent);
 
-  </div>
-   <!-- Font Awesome için -->
-  <script src="https://kit.fontawesome.com/4f35b45f5a.js" crossorigin="anonymous"></script>
+  fetch("http://localhost:3000/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: texts, target_lang: selectedLanguage.toUpperCase() })
+  })
+  .then(res => res.json())
+  .then(data => {
+    elements.forEach((el, i) => {
+      if (data.translations && data.translations[i] && data.translations[i].text) {
+        el.textContent = data.translations[i].text;
+      }
+    });
+  })
+  .catch(err => console.error("Çeviri yüklenirken hata oluştu:", err));
+});
+</script>
+<script src="asset/script/start.js"></script>
 
-  <script src="asset/script/start.js"></script>
- 
 </body>
 </html>

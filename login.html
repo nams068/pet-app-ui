@@ -27,57 +27,76 @@
   <div class="logo-wrapper">
     <img src="asset/images/MY PETS.png" alt="Logo" class="logo" />
   </div>
-  <h2>Welcome Back</h2>
-  <p class="subtitle">Adopting a pet from a local animal shelter will be your best option.</p>
+  <h2 data-key="welcome_back">Welcome Back</h2>
+<p class="subtitle" data-key="adopting_pet_info">Adopting a pet from a local animal shelter will be your best option.</p>
 
 <div class="form-group">
   <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-  <input type="email" placeholder="Enter your gmail" />
+  <input type="email" placeholder="Enter your gmail" data-key="email_placeholder"/>
 </div>
 
 <div class="form-group">
   <span class="icon"><i class="fa-solid fa-lock"></i></span>
-  <input type="password" placeholder="Password" />
+  <input type="password" placeholder="Password" data-key="password_placeholder"/>
   <span class="icon-right"><i class="fa-solid fa-eye"></i></span> 
 </div>
 
+<div class="options">
+  <label><input type="checkbox"  data-key="remember_me"/> Remember me</label>
+  <a href="#" class="link" data-key="forget_password">Forget Password</a>
+</div>
 
-
-  <div class="options">
-    <label><input type="checkbox"  /> Remember me</label>
-    <a href="#" class="link">Forget Password</a>
-  </div>
-
-  <button class="btn primary">Login</button>
+<button class="btn primary" data-key="login_btn">Login</button>
 
 <div class="divider">
   <span class="line-left"></span>
-  <span class="text">or</span>
+  <span class="text" data-key="or_text">or</span>
   <span class="line-right"></span>
 </div>
 
-
-<button class="btn social google">
+<button class="btn social google" data-key="login_google">
   <img src="asset/images/Google__G__logo.svg.webp" alt="Google" />
   Log in with Google
 </button>
 
-<button class="btn social apple">
+<button class="btn social apple" data-key="login_apple">
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
   Log in with Apple
 </button>
 
+<p class="bottom-text" data-key="signup_text">Don’t have an account? <a href="register.html" data-key="sign_up_link">Sign up</a></p>
 
-  <p class="bottom-text">Don’t have an account? <a href="register.html">Sign up</a></p>
 </div>
 
 
   </div>
-   <!-- Font Awesome için -->
-  <script src="https://kit.fontawesome.com/4f35b45f5a.js" crossorigin="anonymous"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Kullanıcının seçtiği dil localStorage'dan
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "EN";
 
+  // Tüm data-key içeren elementleri seç
+  const elements = document.querySelectorAll("[data-key]");
+  const texts = Array.from(elements).map(el => el.textContent);
+
+  // DeepL Node.js server API isteği
+  fetch("http://localhost:3000/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: texts, target_lang: selectedLanguage.toUpperCase() })
+  })
+  .then(res => res.json())
+  .then(data => {
+    // Deepl response data'ya göre textleri güncelle
+    elements.forEach((el, i) => {
+      if (data.translations && data.translations[i] && data.translations[i].text) {
+        el.textContent = data.translations[i].text;
+      }
+    });
+  })
+  .catch(err => console.error("Çeviri yüklenirken hata oluştu:", err));
+});
+</script>
   <script src="asset/script/script.js"></script>
-    <!-- Framework7 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/framework7@7/framework7-bundle.min.js"></script>
 </body>
 </html>

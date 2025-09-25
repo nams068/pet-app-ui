@@ -12,38 +12,35 @@
 <body>
 <div class="phone">
     <div class="status-bar">
-  <span class="time">12:22</span>
-  <div class="status-icons">
-    <i class="fa-solid fa-signal"></i>
-    <i class="fa-solid fa-wifi"></i>
-    <i class="fa-solid fa-battery-three-quarters"></i>
-  </div>
-</div>
+      <span class="time" data-key="status_time">12:22</span>
+      <div class="status-icons">
+        <i class="fa-solid fa-signal"></i>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-solid fa-battery-three-quarters"></i>
+      </div>
+    </div>
 <!-- Header -->
 <header class="header">
-      <input type="text" class="search" placeholder="Search Articles...">
-     <i class="fa-solid fa-bell notification">
-     </i> 
+      <input type="text" class="search" placeholder="Search Articles..." data-key="search_placeholder">
+      <i class="fa-solid fa-bell notification"></i> 
       <img src="https://t3.ftcdn.net/jpg/06/99/46/60/360_F_699466075_DaPTBNlNQTOwwjkOiFEoOvzDV0ByXR9E.jpg" class="profile" alt="Profile">
 </header>
-
-
 
 <section class="learn">
   <!-- Pet Health Category -->
   <div class="learn-category">
     <div class="section-header">
-      <h2>Pet Health</h2>
-      <a href="#">More ></a>
+      <h2 data-key="pet_health">Pet Health</h2>
+      <a href="#" data-key="more_pet_health">More ></a>
     </div>
     <div class="learn-cards-wrapper">
       <div class="learn-card">
-        <img src="https://www.safarivet.com/wp-content/uploads/2018/07/Pet-Health-Care-Tips-for-PetOwners.jpg" alt="Pet Health Tips">
-        <p>5 Tips for Healthy Pets</p>
+        <img src="https://www.safarivet.com/wp-content/uploads/2018/07/Pet-Health-Care-Tips-for-PetOwners.jpg" alt="Pet Health Tips" data-key="pet_health_img">
+        <p data-key="tips_for_healthy_pets">5 Tips for Healthy Pets</p>
       </div>
       <div class="learn-card">
-        <img src="https://thumbs.dreamstime.com/b/cat-healthcare-vet-illustration-135246789.jpg" alt="Cat Care">
-        <p>Cat Care Guide</p>
+        <img src="https://thumbs.dreamstime.com/b/cat-healthcare-vet-illustration-135246789.jpg" alt="Cat Care" data-key="cat_care_img">
+        <p data-key="cat_care_guide">Cat Care Guide</p>
       </div>
     </div>
   </div>
@@ -51,64 +48,73 @@
   <!-- Dog News Category -->
   <div class="learn-category">
     <div class="section-header">
-      <h2>Dog News</h2>
-      <a href="#">More ></a>
+      <h2 data-key="dog_news">Dog News</h2>
+      <a href="#" data-key="more_dog_news">More ></a>
     </div>
     <div class="learn-cards-wrapper">
       <div class="learn-card">
-        <img src="https://thumbs.dreamstime.com/b/cute-dog-reading-newspaper-illustration-170513248.jpg" alt="Dog News">
-        <p>Latest Dog News</p>
+        <img src="https://thumbs.dreamstime.com/b/cute-dog-reading-newspaper-illustration-170513248.jpg" alt="Dog News" data-key="dog_news_img">
+        <p data-key="latest_dog_news">Latest Dog News</p>
       </div>
       <div class="learn-card">
-        <img src="https://thumbs.dreamstime.com/b/funny-dog-playing-park-178452391.jpg" alt="Dog Play">
-        <p>Dog Park Fun</p>
+        <img src="https://thumbs.dreamstime.com/b/funny-dog-playing-park-178452391.jpg" alt="Dog Play" data-key="dog_park_fun_img">
+        <p data-key="dog_park_fun">Dog Park Fun</p>
       </div>
     </div>
   </div>
-
-
-
-
 </section>
-
-
-
-
-
 
 <!-- Bottom Navbar -->
 <nav class="bottom-nav">
-  <a href="index.html" >
+  <a href="index.html">
     <i class="fa-solid fa-house"></i>
-    <span>Home</span>
+    <span data-key="nav_home">Home</span>
   </a>
   <a href="learn.html" class="active">
     <i class="fa-solid fa-book-open"></i>
-    <span>Learn</span>
+    <span data-key="nav_learn">Learn</span>
   </a>
   <a href="petpost.html" class="center-btn">
-    <div class="circle" style="background-color: #9DA3B5; " >
-      <i class="fa-solid fa-paw" style="color: white; font-size: 24px;" ></i>
+    <div class="circle" style="background-color: #9DA3B5;">
+      <i class="fa-solid fa-paw" style="color: white; font-size: 24px;"></i>
     </div>
-    <span>Pet Posts</span>
+    <span data-key="nav_pet_posts">Pet Posts</span>
   </a>
   <a href="Friends.html">
     <i class="fa-solid fa-cat"></i>
-    <span>Friends</span>
+    <span data-key="nav_friends">Friends</span>
   </a>
   <a href="Profile.html">
     <i class="fa-solid fa-user"></i>
-    <span>Profil</span>
+    <span data-key="nav_profile">Profil</span>
   </a>
 </nav>
 
+</div>
 
-  </div>
-<!-- Font Awesome için -->
-<script src="https://kit.fontawesome.com/4f35b45f5a.js" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "EN";
+  const elements = document.querySelectorAll("[data-key]");
+  const texts = Array.from(elements).map(el => el.textContent);
 
-  <script src="asset/script/learnscript.js"></script>
-    <!-- Framework7 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/framework7@7/framework7-bundle.min.js"></script>
+  fetch("http://localhost:3000/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: texts, target_lang: selectedLanguage.toUpperCase() })
+  })
+  .then(res => res.json())
+  .then(data => {
+    elements.forEach((el, i) => {
+      if (data.translations && data.translations[i] && data.translations[i].text) {
+        el.textContent = data.translations[i].text;
+      }
+    });
+  })
+  .catch(err => console.error("Çeviri yüklenirken hata oluştu:", err));
+});
+</script>
+
+<script src="asset/script/learnscript.js"></script>
 </body>
 </html>

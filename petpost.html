@@ -12,31 +12,28 @@
 <body>
 <div class="phone">
     <div class="status-bar">
-  <span class="time">12:22</span>
-  <div class="status-icons">
-    <i class="fa-solid fa-signal"></i>
-    <i class="fa-solid fa-wifi"></i>
-    <i class="fa-solid fa-battery-three-quarters"></i>
-  </div>
-  </div>
+      <span class="time" data-key="status_time">12:22</span>
+      <div class="status-icons">
+        <i class="fa-solid fa-signal"></i>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-solid fa-battery-three-quarters"></i>
+      </div>
+    </div>
 
-    <!-- Header -->
-    <header class="header">
-      <input type="text" class="search" placeholder="Search Articles...">
-     <i class="fa-solid fa-bell notification">
-     </i> 
-      <img src="https://t3.ftcdn.net/jpg/06/99/46/60/360_F_699466075_DaPTBNlNQTOwwjkOiFEoOvzDV0ByXR9E.jpg" class="profile" alt="Profile">
-    </header>
+<!-- Header -->
+<header class="header">
+  <input type="text" class="search" placeholder="Search Articles..." data-key="search_placeholder">
+  <i class="fa-solid fa-bell notification"></i> 
+  <img src="https://t3.ftcdn.net/jpg/06/99/46/60/360_F_699466075_DaPTBNlNQTOwwjkOiFEoOvzDV0ByXR9E.jpg" class="profile" alt="Profile">
+</header>
 
-
-
-    <div class="feed">
+<div class="feed">
 
   <!-- Post 1 -->
   <div class="post">
     <div class="post-header">
       <img src="https://t3.ftcdn.net/jpg/06/99/46/60/360_F_699466075_DaPTBNlNQTOwwjkOiFEoOvzDV0ByXR9E.jpg" class="profile-pic" alt="Profile">
-      <span class="username">petlover_01</span>
+      <span class="username" data-key="username_1">petlover_01</span>
     </div>
     <img src="https://media.istockphoto.com/id/1269216045/photo/cat-in-istanbul.jpg?s=612x612&w=0&k=20&c=hXh2dmLkb4clx37R0hPCHgmL0oGAvZO222WGQc-ltm8=" class="post-image" alt="Post Image">
     <div class="post-actions">
@@ -45,7 +42,7 @@
       <i class="fa-regular fa-paper-plane"></i>
     </div>
     <div class="post-caption">
-      <span class="username">petlover_01</span> Cute cat enjoying the sun! ☀️🐶
+      <span class="username" data-key="username_1_caption">petlover_01</span> <span data-key="caption_1">Cute cat enjoying the sun! ☀️🐶</span>
     </div>
   </div>
 
@@ -53,7 +50,7 @@
   <div class="post">
     <div class="post-header">
       <img src="https://media.istockphoto.com/id/1131863146/photo/young-african-woman-isolated-on-grey-wall-studio-winter-concept-soft-cloth.jpg?s=612x612&w=0&k=20&c=3NvOJx3tfhEuOHW4Zo8yrglnMKOh4llwjLzknyT56t0=" class="profile-pic" alt="Profile">
-      <span class="username">catqueen</span>
+      <span class="username" data-key="username_2">catqueen</span>
     </div>
     <img src="https://marilyndavies.wordpress.com/wp-content/uploads/2013/01/bean1.jpg" class="post-image" alt="Post Image">
     <div class="post-actions">
@@ -62,7 +59,7 @@
       <i class="fa-regular fa-paper-plane"></i>
     </div>
     <div class="post-caption">
-      <span class="username">catqueen</span> Lazy afternoon with my cat 🐱💤
+      <span class="username" data-key="username_2_caption">catqueen</span> <span data-key="caption_2">Lazy afternoon with my cat 🐱💤</span>
     </div>
   </div>
 
@@ -70,7 +67,7 @@
   <div class="post">
     <div class="post-header">
       <img src="https://media.istockphoto.com/id/492529287/photo/portrait-of-happy-laughing-man.jpg?s=612x612&w=0&k=20&c=0xQcd69Bf-mWoJYgjxBSPg7FHS57nOfYpZaZlYDVKRE=" class="profile-pic" alt="Profile">
-      <span class="username">wildlife_explorer</span>
+      <span class="username" data-key="username_3">wildlife_explorer</span>
     </div>
     <img src="https://www.harringtonspetfood.com/cdn/shop/articles/shutterstock_1932733598.jpg?v=1682081922" class="post-image" alt="Post Image">
     <div class="post-actions">
@@ -79,51 +76,62 @@
       <i class="fa-regular fa-paper-plane"></i>
     </div>
     <div class="post-caption">
-      <span class="username">wildlife_explorer</span> Morning walk with my buddy 🐾🌿
+      <span class="username" data-key="username_3_caption">wildlife_explorer</span> <span data-key="caption_3">Morning walk with my buddy 🐾🌿</span>
     </div>
   </div>
 
 </div>
 
-
-
-
-
-
-
-
 <!-- Bottom Navbar -->
 <nav class="bottom-nav">
-  <a href="index.html" >
+  <a href="index.html">
     <i class="fa-solid fa-house"></i>
-    <span>Home</span>
+    <span data-key="nav_home">Home</span>
   </a>
   <a href="learn.html">
     <i class="fa-solid fa-book-open"></i>
-    <span>Learn</span>
+    <span data-key="nav_learn">Learn</span>
   </a>
-  <a href="petpost.html" class="center-btn active"  >
-    <div class="circle" style="background-color: #9DA3B5; " >
-      <i class="fa-solid fa-paw" style="color: white; font-size: 24px;" ></i>
+  <a href="petpost.html" class="center-btn active">
+    <div class="circle" style="background-color: #9DA3B5;">
+      <i class="fa-solid fa-paw" style="color: white; font-size: 24px;"></i>
     </div>
-    <span>Pet Posts</span>
+    <span data-key="nav_pet_posts">Pet Posts</span>
   </a>
   <a href="Friends.html">
     <i class="fa-solid fa-cat"></i>
-    <span>Friends</span>
+    <span data-key="nav_friends">Friends</span>
   </a>
   <a href="Profile.html">
     <i class="fa-solid fa-user"></i>
-    <span>Profil</span>
+    <span data-key="nav_profile">Profil</span>
   </a>
 </nav>
 
-  </div>
-   <!-- Font Awesome için -->
-  <script src="https://kit.fontawesome.com/4f35b45f5a.js" crossorigin="anonymous"></script>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "EN";
+  const elements = document.querySelectorAll("[data-key]");
+  const texts = Array.from(elements).map(el => el.textContent);
 
-  <script src="asset/script/script.js"></script>
-    <!-- Framework7 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/framework7@7/framework7-bundle.min.js"></script>
+  fetch("http://localhost:3000/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: texts, target_lang: selectedLanguage.toUpperCase() })
+  })
+  .then(res => res.json())
+  .then(data => {
+    elements.forEach((el, i) => {
+      if (data.translations && data.translations[i] && data.translations[i].text) {
+        el.textContent = data.translations[i].text;
+      }
+    });
+  })
+  .catch(err => console.error("Çeviri yüklenirken hata oluştu:", err));
+});
+</script>
+<script src="asset/script/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/framework7@7/framework7-bundle.min.js"></script>
 </body>
 </html>

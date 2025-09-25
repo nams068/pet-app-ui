@@ -4,20 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let selectedLanguage = null;
 
-  // 📌 Sayfa açıldığında daha önce seçilen dili geri yükle
+  // Sayfa açıldığında kaydedilen dili geri yükle
   const savedLanguage = localStorage.getItem("selectedLanguage");
   if (savedLanguage) {
     langItems.forEach(item => {
       const text = item.querySelector(".text").textContent;
-      if (text === savedLanguage) {
+      const match = text.match(/\(([^)]+)\)/);
+      const code = match ? match[1] : text.trim(); // parantez yoksa metnin tamamını al
+      if (code === savedLanguage) {
         item.classList.add("selected");
         item.querySelector(".radio")?.classList.add("checked");
-        selectedLanguage = savedLanguage; // tekrar set et
+        selectedLanguage = savedLanguage;
       }
     });
   }
 
-  // Dil seçme işlemi
+  // Dil seçimi
   langItems.forEach(item => {
     item.addEventListener("click", () => {
       langItems.forEach(i => {
@@ -28,12 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
       item.classList.add("selected");
       item.querySelector(".radio").classList.add("checked");
 
-      selectedLanguage = item.querySelector(".text").textContent;
-      console.log("Seçilen dil:", selectedLanguage);
+      const text = item.querySelector(".text").textContent;
+      const match = text.match(/\(([^)]+)\)/);
+      selectedLanguage = match ? match[1].trim() : text.trim(); // her durumda doğru kodu al
+
+      console.log("Seçilen dil kodu:", selectedLanguage);
     });
   });
 
-  // Kaydet butonuna tıklayınca
+  // Kaydet butonu
   saveBtn.addEventListener("click", () => {
     if (selectedLanguage) {
       localStorage.setItem("selectedLanguage", selectedLanguage);
