@@ -13,8 +13,6 @@
   width: 300px;
   height: 300px;
   padding: 0;
-  border-radius: 20px;
-  margin-bottom: 15px;
 }
 
 .auth-title {
@@ -56,6 +54,9 @@
   justify-content: space-between;
   font-size: 13px;
   margin-bottom: 20px;
+}
+.options  a{
+  text-decoration: none;
 }
 
 .btn-main {
