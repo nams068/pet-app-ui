@@ -79,7 +79,7 @@ body {
   .header {
     position: fixed;
     top: 0;
-    width: 350px;
+    width: calc(100% - 25px);
     z-index: 20;
     background: #fff;
   }
