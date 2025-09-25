@@ -6,6 +6,7 @@
   <title>Pet Care App - Home</title>
   <link rel="stylesheet" href="asset/css/style.css">
   <link rel="stylesheet" href="asset/css/login-register.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -20,38 +21,51 @@
   </div>
   </div>
 
-
-
-  <div class="auth-screen">
-  <div class="auth-image">
-    <img src="asset/images/loginregister.png" alt="signup image">
+<div class="screen signup-screen">
+  <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="logo-wrapper">
+    <img src="asset/images/MY PETS.png" alt="Logo" class="logo" />
   </div>
-  <h2 class="auth-title">Sign Up</h2>
-
-  <div class="input-group">
-    <input type="email" placeholder="Email address">
-  </div>
-  <div class="input-group">
-    <input type="password" placeholder="Password">
-    <span class="eye"></span>
-  </div>
-  <div class="input-group">
-    <input type="password" placeholder="Confirm password">
-    <span class="eye"></span>
-  </div>
-
-  <button class="btn-main">Continue</button>
-
-  <div class="divider">Or sign up with</div>
-
-  <div class="socials">
-    <button class="google">Google</button>
-    <button class="apple">Apple</button>
-  </div>
-
-  <p class="account-text">
-    Do you already have an account? <a href="login.html">Log in</a>
+  <h2>Pets loving families</h2>
+  <p class="subtitle">
+    Sign up to explore pets and connect with shelters.
   </p>
+
+  <div class="form-group">
+    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+    <input type="email" placeholder="Enter your gmail" />
+  </div>
+  <div class="form-group">
+    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+    <input type="password" placeholder="Password" />
+    <span class="icon-right"><i class="fa-solid fa-eye"></i></span> 
+  </div>
+  <div class="form-group">
+    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+    <input type="password" placeholder="Confirm Password" />
+    <span class="icon-right"><i class="fa-solid fa-eye"></i></span> 
+  </div>
+
+  <button class="btn primary">Sign Up</button>
+
+  <div class="divider">
+  <span class="line-left"></span>
+  <span class="text">or</span>
+  <span class="line-right"></span>
+</div>
+
+<button class="btn social google">
+  <img src="asset/images/Google__G__logo.svg.webp" alt="Google" />
+  Log in with Google
+</button>
+
+<button class="btn social apple">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+  Log in with Apple
+</button>
+
+
+  <p class="bottom-text">Already have an account? <a href="login.html">Login</a></p>
 </div>
 
 
